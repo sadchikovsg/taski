@@ -7,7 +7,9 @@ SECRET_KEY = (
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['89.169.164.89', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    '89.169.164.89', '127.0.0.1', 'localhost', 'sadchikovsg.sytes.net'
+]
 
 # Application definition
 
