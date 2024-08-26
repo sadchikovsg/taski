@@ -7,6 +7,10 @@ server {
         proxy_pass http://127.0.0.1:8000;
     }
 
+    location /admin/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
     location / {
         root   /var/www/taski;
         index  index.html index.htm;
