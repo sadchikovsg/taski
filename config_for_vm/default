@@ -1,7 +1,11 @@
 server {
 
     listen 80;
-    server_name публичный_ip_вашего_удалённого_сервера;
+    yc-vm_ssg 89.169.164.89;
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
 
     location / {
         root   /var/www/taski;
