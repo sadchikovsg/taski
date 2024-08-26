@@ -1,5 +1,8 @@
 from pathlib import Path
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = (
@@ -120,3 +123,15 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+# Скопируйте DSN из вашего личного кабинета на Sentry:
+# Settings → Projects → <ваш-проект> → Client Keys (DSN).
+sentry_sdk.init(
+    # В этой переменной будет значение для вашего проекта.
+    dsn=('https://2745e1e924aedc3f3577e06638d91701@o4507844640112640.'
+         'ingest.de.sentry.io/4507844642013264'),
+    integrations=[
+        DjangoIntegration(),
+    ],
+    traces_sample_rate=1.0,
+    send_default_pii=True)
