@@ -37,3 +37,4 @@ server {
     listen 80;
     server_name 89.169.164.89 sadchikovsg.sytes.net;
     return 404; # managed by Certbot
+}
